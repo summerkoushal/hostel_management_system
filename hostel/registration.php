@@ -169,45 +169,81 @@ echo"<script>alert('Student Succssfully register');</script>";
                                             </div>
 
                                             <!-- --------------------------captchaa-----------------------------------------  -->
-                                            <div class="form-container col-sm-2 control-label">
-                                                <label for="">Enter Captcha</label>
-                                                <br>
-                                                <div class="captcha col-md-6 form-control"
-                                                    style="height: 65px; width : 300px; display:flex;align-items:center">
-                                                    <div id="captchaValue"></div>
-                                                    <br>
-                                                    <input id="inputCaptcha" type="text"
-                                                        style="height: 42px; width : 200px;"
-                                                        class="captcha col-md-6 form-control" name=""
-                                                        placeholder="Retype Captcha here">
-                                                </div>
-                                                <span style="color:white">
-                                                    <br>.
+                                            <!-- <div class="form-container col-sm-2 control-label"> -->
+                                                <!-- <label for="">Enter Captcha</label> -->
+                                                <!-- <br> -->
+                                                <!-- <div class="captcha col-md-6 form-control" -->
+                                                    <!-- style="height: 65px; width : 300px; display:flex;align-items:center"> -->
+                                                    <!-- <div id="captchaValue"></div> -->
+                                                    <!-- <br> -->
+                                                    <!-- <input id="inputCaptcha" type="text" -->
+                                                        <!-- style="height: 42px; width : 200px;" -->
+                                                        <!-- class="captcha col-md-6 form-control" name="" -->
+                                                        <!-- placeholder="Retype Captcha here"> -->
+                                                <!-- </div> -->
+                                                <!-- <span style="color:white"> -->
                                                     <!-- <br>. -->
-                                                    <br>.
-                                                </span>
-                                                <button type="button" id="submitBtn" name="login"
-                                                    class=" btn btn-primary btn-value=" login">Verify
-                                                    Captcha</button>
-                                            </div>
-                                            <br>
+                                                    <!-- <br>. -->
+                                                    <!-- <br>. -->
+                                                <!-- </span> -->
+                                                <!-- <button type="button" id="submitBtn" name="login" -->
+                                                    <!-- class=" btn btn-primary btn-value=" login">Verify -->
+                                                    <!-- Captcha</button> -->
+                                            <!-- </div> -->
+                                            <!-- <br> -->
                                         <!-- </form> -->
-                                        <span style="color:white">
+                                        <!-- <span style="color:white">
                                             <br>.
                                             <br>.
                                             <br>.
                                             <br>.
                                             <br>.
-                                        </span>
+                                        </span> -->
 
+                                        <!-- <div class="col-sm-6 col-sm-offset-4">
+                                            <button class="btn btn-default" type="reset">Reset</button>
+                                            <input type="submit" name="submit" Value="Register" class="btn btn-primary">
+                                        </div>
+                                        </form> -->
+
+
+<!-- --------------------------------------index wala captcha -------------------------------- -->
+<label for="" style="color: black " class="col-sm-2 control-label">Enter Captcha</label>
+                                            <div class="form-row col-sm-6 control-label">
+                                                <div class="form-group col-md-6 ">
+                                                    <input type="text" class="form-control" readonly id="capt">
+                                                </div>
+                                                <!-- <p>huhhhhh</p> -->
+                                                <div class="form-group col-md-6 ">
+                                                    <input type="text" class="form-control" id="textinput">
+                                                </div>
+                                            </div>
+
+											
+                                            <!-- <input type="submit" onclick="validcap()" name="login"
+                                                class="btn btn-primary btn-block" value="login">
+
+												<h5 style="color: white ">Captcha not visibleE <img src="./img/refresh-16.png" onclick="cap()"></h5>
+
+                                            <input type="submit" onclick="validcap()" name="login"
+                                                class="btn btn-primary btn-block " value="register"> -->
+<!-- //this works-----------------------------------------------------------------------  -->
                                         <div class="col-sm-6 col-sm-offset-4">
                                             <button class="btn btn-default" type="reset">Reset</button>
                                             <input type="submit" name="submit" Value="Register" class="btn btn-primary">
                                         </div>
-                                        </form>
+
+												<h5 style="color: Green ">Captcha not visibleE <img src="./img/refresh-16.png" onclick="cap()"></h5>
+
+<!-- --------------------------------------index wala captcha ends-------------------------------- -->
+
                                         <!-- -------------------experiment ends-----------------------------------------  -->
 
-                                        
+                                        <!-- <div class="col-sm-6 col-sm-offset-4">
+                                            <button class="btn btn-default" type="reset">Reset</button>
+                                            <input type="submit" name="submit" Value="Register" class="btn btn-primary">
+                                        </div> -->
+                                        </form>
 
                                     </div>
                                 </div>
@@ -221,6 +257,39 @@ echo"<script>alert('Student Succssfully register');</script>";
     </div>
     </div>
     </div>
+    <script type="text/javascript">
+    function cap() {
+        var alpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+            'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e',
+            'f', 'g', 'h', 'i',
+            'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '!', '@', '#', '$',
+            '%', '^', '&', '*', '+'
+        ];
+        var a = alpha[Math.floor(Math.random() * 71)];
+        var b = alpha[Math.floor(Math.random() * 71)];
+        var c = alpha[Math.floor(Math.random() * 71)];
+        var d = alpha[Math.floor(Math.random() * 71)];
+        var e = alpha[Math.floor(Math.random() * 71)];
+        var f = alpha[Math.floor(Math.random() * 71)];
+
+        var final = a + b + c + d + e + f;
+        document.getElementById("capt").value = final;
+    }
+
+    function validcap() {
+        var stg1 = document.getElementById('capt').value;
+        var stg2 = document.getElementById('textinput').value;
+        if (stg1 == stg2) {
+            alert("Form is validated Succesfully");
+            return true;
+        } else {
+            alert("Please enter a valid captcha");
+			location.reload();
+			history.go(-1)
+            return false;
+        }
+    }
+    </script>
     <script type="text/javascript">
     var allValue = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
         'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
