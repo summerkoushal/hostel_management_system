@@ -113,32 +113,32 @@ header("location:dashboard.php");
                                             <!-- <button onclick="validcap()" class="btn btn-lg btn-success btn-block">Verify Captcha</button> -->
 
                                             <!-- -------------------experiment-----------------------------------------  -->
-                                            <div class="form-container">
+                                            <!-- <div class="form-container"> -->
                                                 <!-- <h1>Login</h1> -->
                                                 <!-- <form name="logform"> -->
                                                 <!-- <input type="text" class="captcha col-md-6 form-control" name="user" placeholder = "Username" > -->
                                                 <!-- <input type="password" class="captcha col-md-6 form-control" name="pass" placeholder = "Password" > -->
-                                                <label for="">Enter Captcha</label>
-                                                <div class="captcha col-md-6 form-control">
+                                                <!-- <label for="">Enter Captcha</label> -->
+                                                <!-- <div class="captcha col-md-6 form-control"> -->
 
-                                                    <div id="captchaValue"></div>
-                                                    <br>
-                                                    <input id="inputCaptcha" type="text"
-                                                        class="captcha col-md-6 form-control" name=""
-                                                        placeholder="Retype Captcha here">
-                                                </div>
-                                                <span style="color:white">
+                                                    <!-- <div id="captchaValue"></div> -->
+                                                    <!-- <br> -->
+                                                    <!-- <input id="inputCaptcha" type="text" -->
+                                                        <!-- class="captcha col-md-6 form-control" name="" -->
+                                                        <!-- placeholder="Retype Captcha here"> -->
+                                                <!-- </div> -->
+                                                <!-- <span style="color:white">
                                                     <br>.
                                                     <br>.
                                                     <br>.
-                                                </span>
-                                                <button type="button" id="submitBtn" name="login"
-                                                    class=" btn btn-primary btn-block" value="login">Verify
-                                                    Captcha</button>
+                                                </span> -->
+                                                <!-- <button type="button" id="submitBtn" name="login" -->
+                                                    <!-- class=" btn btn-primary btn-block" value="login">Verify -->
+                                                    <!-- Captcha</button> -->
 
                                                 <!-- </form>                                      -->
-                                            </div>
-                                            <br>
+                                            <!-- </div> -->
+                                            <!-- <br> -->
                                             <!-- -------------------experiment ends-----------------------------------------  -->
                                             <input type="submit" name="login" class="btn btn-primary btn-block"
                                                 value="login">
