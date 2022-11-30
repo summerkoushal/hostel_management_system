@@ -188,6 +188,7 @@ header("location:dashboard.php");
             document.logForm.submit();
         } else {
             alert('Invalid Captcha');
+            history. back();
         }
 
     })
