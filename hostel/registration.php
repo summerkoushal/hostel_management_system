@@ -191,9 +191,7 @@ echo"<script>alert('Student Succssfully register');</script>";
                                                     Captcha</button>
                                             </div>
                                             <br>
-                                        </form>
-                                        <!-- -------------------experiment ends-----------------------------------------  -->
-
+                                        <!-- </form> -->
                                         <span style="color:white">
                                             <br>.
                                             <br>.
@@ -207,6 +205,9 @@ echo"<script>alert('Student Succssfully register');</script>";
                                             <input type="submit" name="submit" Value="Register" class="btn btn-primary">
                                         </div>
                                         </form>
+                                        <!-- -------------------experiment ends-----------------------------------------  -->
+
+                                        
 
                                     </div>
                                 </div>
@@ -249,9 +250,13 @@ echo"<script>alert('Student Succssfully register');</script>";
             document.logForm.submit();
         } else {
             alert('Invalid Captcha');
+            history. back();
         }
 
     })
+
+	
+
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
