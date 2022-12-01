@@ -4,7 +4,8 @@ include('includes/config.php');
 if(isset($_POST['login']))
 {
 $username=$_POST['username'];
-$password=$_POST['password'];
+$p=$_POST['password'];
+$password=hash('sha512', $p);
 $stmt=$mysqli->prepare("SELECT username,email,password,id FROM admin WHERE (userName=?|| email=?) and password=? ");
 				$stmt->bind_param('sss',$username,$username,$password);
 				$stmt->execute();
@@ -82,7 +83,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM admin WHERE (user
                                             <input type="submit" onclick="validcap()" name="login"
                                                 class="btn btn-primary btn-block" value="login">
 
-												<h5 style="color: white ">Captcha not visibleE <img src="./img/refresh-16.png" onclick="cap()"></h5>
+												<h5 style="color: white; padding-left: 10px; "> Refresh Captcha <img style="width: 20px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYwVrN3cDrOijoWaXnRk8Zkk3qo__W9-Otfg&usqp=CAU" onclick="cap()"></h5>
 <!-- --------------------------------------------------------------------------------------  -->
 									<!-- <input type="submit" name="login" onclick="validcap()" class="btn btn-success btn-block" value="login" > -->
 								</form>

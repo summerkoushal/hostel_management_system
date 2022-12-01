@@ -10,7 +10,8 @@ $lname=$_POST['lname'];
 $gender=$_POST['gender'];
 $contactno=$_POST['contact'];
 $emailid=$_POST['email'];
-$password=$_POST['password'];
+$p=$_POST['password'];
+$password=hash('sha512', $p);
 	$result ="SELECT count(*) FROM userRegistration WHERE email=? || regNo=?";
 		$stmt = $mysqli->prepare($result);
 		$stmt->bind_param('ss',$email,$regno);
@@ -208,7 +209,7 @@ echo"<script>alert('Student Succssfully register');</script>";
 
 
 <!-- --------------------------------------index wala captcha -------------------------------- -->
-<label for="" style="color: black " class="col-sm-2 control-label">Enter Captcha</label>
+<label for="" style="color: black;" class="col-sm-2 control-label">Enter Captcha</label>
                                             <div class="form-row col-sm-6 control-label">
                                                 <div class="form-group col-md-6 ">
                                                     <input type="text" class="form-control" readonly id="capt">
@@ -233,7 +234,7 @@ echo"<script>alert('Student Succssfully register');</script>";
                                             <input type="submit" name="submit" Value="Register" class="btn btn-primary">
                                         </div>
 
-												<h5 style="color: Green ">Captcha not visibleE <img src="./img/refresh-16.png" onclick="cap()"></h5>
+												<h5 style="color: Green "> Refresh Captcha <img style="width: 20px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYwVrN3cDrOijoWaXnRk8Zkk3qo__W9-Otfg&usqp=CAU" onclick="cap()"></h5>
 
 <!-- --------------------------------------index wala captcha ends-------------------------------- -->
 

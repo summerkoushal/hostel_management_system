@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 08:24 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Host: localhost
+-- Generation Time: Dec 01, 2022 at 04:10 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,9 +41,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `email`, `password`, `reg_date`, `updation_date`) VALUES
-(1, 'admin', 'admin@gmail.com', 'admin', '2022-04-04 20:31:45', '2022-11-19'),
-(2, 'ssp', 'Shreyash@gmail.com', 'xyz', '2022-04-04 20:31:45', '2022-11-19'),
-(3, 'shreyash\r\n\r\n', 'Shreyash@gmail.com', 'shreyash\r\n', '2022-04-04 20:31:45', '2022-11-19');
+(1, 'admin', 'admin@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2022-04-04 20:31:45', '2022-11-19'),
+(2, 'Summer', 'summer@gmail.com', 'd3d497ac35e89161ffb3d1417f1320c1b40bb39273e85f1a5bf7c7f63a423c35b4113cf2fdca07741ea428e56af5f1ae55aa4192df72d06987103d376e193680', '2022-12-01 02:53:02', '2022-12-01');
 
 -- --------------------------------------------------------
 
@@ -250,6 +249,22 @@ CREATE TABLE `userlog` (
   `loginTime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `userlog`
+--
+
+INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`, `loginTime`) VALUES
+(10, 10, 'jjj@gmail.com', 0x3a3a31, '', '', '2022-11-30 06:15:35'),
+(11, 13, 'pavan@gmail.com', 0x3a3a31, '', '', '2022-11-30 06:20:58'),
+(12, 15, 'alpha@gmail.com', 0x3a3a31, '', '', '2022-11-30 07:19:03'),
+(13, 15, 'alpha@gmail.com', 0x3a3a31, '', '', '2022-11-30 07:20:33'),
+(14, 13, 'pavan@gmail.com', 0x3a3a31, '', '', '2022-12-01 02:36:46'),
+(15, 19, 'arpan@gmail.com', 0x3a3a31, '', '', '2022-12-01 02:50:39'),
+(16, 13, 'pavan@gmail.com', 0x3a3a31, '', '', '2022-12-01 02:50:51'),
+(17, 13, 'pavan@gmail.com', 0x3a3a31, '', '', '2022-12-01 02:51:55'),
+(18, 19, 'arpan@gmail.com', 0x3a3a31, '', '', '2022-12-01 02:52:03'),
+(19, 13, 'pavan@gmail.com', 0x3a3a31, '', '', '2022-12-01 02:52:10');
+
 -- --------------------------------------------------------
 
 --
@@ -276,12 +291,8 @@ CREATE TABLE `userregistration` (
 --
 
 INSERT INTO `userregistration` (`id`, `regNo`, `firstName`, `middleName`, `lastName`, `gender`, `contactNo`, `email`, `password`, `regDate`, `updationDate`, `passUdateDate`) VALUES
-(1, '2020BCS000', 'user', 'testing', 'purpose', 'none', 999999999, 'user@gmail.com', 'user', '2022-11-19 19:00:30', NULL, NULL),
-(4, '2020BCS056', 'Shreyash', 'Shriram', 'Patil', 'male', 8600384693, 'shreyashpatil256@gmail.com', '8600384693', '2022-11-19 19:00:30', NULL, NULL),
-(5, '2020BCS070', 'Pavan ', 'Narayan ', 'Pabitwar ', 'male', 9999999999, 'pavan@gamil.com', '9999999999', '2022-11-19 19:02:11', NULL, NULL),
-(6, '2020EXT056', 'Devid', 's', 'Patle', 'male', 9999999999, 'devidd@gamil.com', '9999999999', '2022-11-19 19:11:29', NULL, NULL),
-(7, '123', 'aakash', 'sunil', 'devkar', 'male', 9999999999, 'akn@gamil.com', '9999999999', '2022-11-19 19:13:36', NULL, NULL),
-(8, '10806121', 'user', '', 'testing', 'male', 1234567890, 'user@gmail.com', 'user', '2022-07-21 14:56:18', NULL, NULL);
+(13, '001', 'Pavan', 'Narayan', 'Pabitwar', 'male', 7688768675, 'pavan@gmail.com', '4b57b881eed14e4bd9f6c5d3848df7b42aa041919d68a9ecf396070191c6fc2285659e3f1ca5f0b6725fd7612f01ef0a432fceecbb33953f85836431bd802c2d', '2022-11-30 06:19:28', NULL, NULL),
+(19, '002', 'Arpan', 'Kumar', 'Chandel', 'male', 210381230, 'arpan@gmail.com', '9e99e2ce623f08b688adb7864da91e04217acabda8eee481e47f055a5214f577dc148f13cb7634d78ca0ffa2ec521b79fec31b9adb5d57de1ec849a169abffa8', '2022-12-01 02:50:26', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -369,13 +380,13 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `userregistration`
 --
 ALTER TABLE `userregistration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

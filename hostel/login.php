@@ -4,7 +4,8 @@ include('includes/config.php');
 if(isset($_POST['login']))
 {
 $email=$_POST['email'];
-$password=$_POST['password'];
+$p=$_POST['password'];
+$password=hash('sha512', $p);
 $stmt=$mysqli->prepare("SELECT email,password,id FROM userregistration WHERE email=? and password=? ");
 				$stmt->bind_param('ss',$email,$password);
 				$stmt->execute();
@@ -90,7 +91,7 @@ return true;
 							<div class="col-md-8 col-md-offset-2">
 							
 								<form action="" class="mt" method="post">
-									<label for="" class="text-uppercase text-sm">Email</label>
+									<label for="" class="text-uppercase text-sm">Emails</label>
 									<input type="text" placeholder="Email" name="email" class="form-control mb">
 									<label for="" class="text-uppercase text-sm">Password</label>
 									<input type="password" placeholder="Password" name="password" class="form-control mb">

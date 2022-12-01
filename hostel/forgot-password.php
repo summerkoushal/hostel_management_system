@@ -44,7 +44,7 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 </head
 <body>
 	
-	<div class="login-page bk-img" style="background-image: url(img/login-bg.jpg);">
+	<div class="login-page">
 		<div class="form-content">
 			<div class="container">
 				<div class="row">
@@ -54,7 +54,7 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 							<div class="col-md-8 col-md-offset-2">
 							<?php if(isset($_POST['login']))
 { ?>
-					<p>Yuor Password is <?php echo $pwd;?><br> Change the Password After login</p>
+					<p>Your response has been recorded<br> Contact the admin for help.</p>
 					<?php }  ?>
 								<form action="" class="mt" method="post">
 									<label for="" class="text-uppercase text-sm">Your Email</label>
@@ -68,7 +68,7 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 							</div>
 						</div>
 						<div class="text-center text-light">
-							<a href="index.php" class="text-light">Sign in?</a>
+							<a style="background-color: black; padding: 10px; border-radius:10px" href="index.php" class="text-light">Sign in?</a>
 						</div>
 					</div>
 				</div>
