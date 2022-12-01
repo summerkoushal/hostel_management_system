@@ -8,8 +8,12 @@ $ai=$_SESSION['id'];
 // code for change password
 if(isset($_POST['changepwd']))
 {
-  $op=$_POST['oldpassword'];
-  $np=$_POST['newpassword'];
+//   $op=$_POST['oldpassword'];
+  $p=$_POST['oldpassword'];
+  $op=hash('sha512', $p);
+//   $np=$_POST['newpassword'];
+  $q=$_POST['newpassword'];
+  $np=hash('sha512', $q);
 $udate=date('d-m-Y h:i:s', time());;
 	$sql="SELECT password FROM userregistration where password=?";
 	$chngpwd = $mysqli->prepare($sql);
